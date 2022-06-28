@@ -67,6 +67,12 @@ Layout/SpaceBeforeBrackets:
     - "/**/{Formula,Casks}/*.rb"
     - "**/{Formula,Casks}/*.rb"
 
+# Disable for formulae until https://github.com/rubocop/rubocop/issues/10763 is fixed.
+Layout/LineContinuationSpacing:
+  Exclude:
+    - "/**/Formula/*.rb"
+    - "**/Formula/*.rb"
+
 # Use `<<~` for heredocs.
 Layout/HeredocIndentation:
   Enabled: true
