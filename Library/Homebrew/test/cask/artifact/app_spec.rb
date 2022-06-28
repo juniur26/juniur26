@@ -122,18 +122,18 @@ describe Cask::Artifact::App, :cask do
           it "overwrites the existing app" do
             expect(command).to receive(:run).with(
               "/bin/chmod", args: [
-                "-R", "--", "u+rwx", target_path
-              ], must_succeed: false
+                              "-R", "--", "u+rwx", target_path
+                            ], must_succeed: false
             ).and_call_original
             expect(command).to receive(:run).with(
               "/bin/chmod", args: [
-                "-R", "-N", target_path
-              ], must_succeed: false
+                              "-R", "-N", target_path
+                            ], must_succeed: false
             ).and_call_original
             expect(command).to receive(:run).with(
               "/usr/bin/chflags", args: [
-                "-R", "--", "000", target_path
-              ], must_succeed: false
+                                    "-R", "--", "000", target_path
+                                  ], must_succeed: false
             ).and_call_original
 
             stdout = <<~EOS
